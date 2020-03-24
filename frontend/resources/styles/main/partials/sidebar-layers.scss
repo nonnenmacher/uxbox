@@ -150,6 +150,11 @@
         margin-left: auto;
         width: 55px;
 
+        svg {
+          margin-left: $x-small;
+          margin-right: 0;
+        }
+
         .block-element {
 
           svg {
@@ -286,6 +291,10 @@
 
         span {
           color: $color-gray-60;
+        }
+
+        .toggle-content {
+          margin-left: $x-small;
         }
 
       }
