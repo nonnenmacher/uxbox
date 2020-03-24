@@ -132,6 +132,7 @@
     [:div.sitemap.tool-window
      [:div.tool-window-bar
       [:span (t locale "workspace.sidebar.sitemap")]
-      [:div.add-page {:on-click on-create-click} i/close]]
+      [:div.add-page {:on-click on-create-click} i/close]
+      [:div.collapse-pages {:on-click on-create-click} i/arrow-slide]]
      [:div.tool-window-content
       [:& pages-list {:file file :current-page page}]]]))

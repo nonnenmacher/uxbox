@@ -10,9 +10,10 @@
  
   .tool-window-bar {
 
-    .add-page {
+    .add-page,
+    .collapse-pages {
       align-items: center;
-      background-color: $color-gray-60;
+      background-color: transparent;
       border-radius: $br-small;
       border: 1px solid transparent;
       cursor: pointer;
@@ -33,6 +34,14 @@
         svg {
           fill: $color-gray-60;
         }
+      }
+    }
+
+    .collapse-pages {
+      margin-left: $small;
+
+      svg {
+        transform: rotate(90deg);
       }
     }
   }
@@ -76,13 +85,7 @@
             fill: $color-gray-60;
             height: 15px;
             margin-left: $x-small;
-            opacity: .6;
             width: 15px;
-
-            &:hover {
-              opacity: 1;
-            }
-
           }
 
         }
@@ -106,7 +109,6 @@
 
         .page-actions {
           display: flex;
-          @include animation(0s,.3s,fadeIn);
         }
 
       }
