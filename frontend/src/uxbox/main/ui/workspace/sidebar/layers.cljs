@@ -148,15 +148,15 @@
      [:div.element-list-body {:class (dom/classnames :selected selected?)
                               :on-click select-shape
                               :on-double-click #(dom/stop-propagation %)}
+      [:& element-icon {:shape item}]
+      [:& layer-name {:shape item}]
       [:div.element-actions
        [:div.toggle-element {:class (when-not (:hidden item) "selected")
                              :on-click toggle-visibility}
         i/eye]
        [:div.block-element {:class (when (:blocked item) "selected")
                             :on-click toggle-blocking}
-        i/lock]]
-      [:& element-icon {:shape item}]
-      [:& layer-name {:shape item}]]]))
+        i/lock]]]]))
 
 (mf/defc layer-frame-item
   {:wrap [#(mf/wrap-memo % =)]}
@@ -234,6 +234,8 @@
      [:div.element-list-body {:class (dom/classnames :selected selected?)
                               :on-click select-shape
                               :on-double-click #(dom/stop-propagation %)}
+      [:div.element-icon i/artboard]
+      [:& layer-name {:shape item}]
       [:div.element-actions
        [:div.toggle-element {:class (when-not (:hidden item) "selected")
                              :on-click toggle-visibility}
@@ -241,8 +243,6 @@
        #_[:div.block-element {:class (when (:blocked item) "selected")
                             :on-click toggle-blocking}
           i/lock]]
-      [:div.element-icon i/folder]
-      [:& layer-name {:shape item}]
       [:span.toggle-content
        {:on-click toggle-collapse
         :class (when-not collapsed? "inverse")}

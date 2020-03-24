@@ -92,8 +92,12 @@
   width: 100%;
 
   ul {
-    border-left: 6px solid $color-gray-40;
+    border-left: 9px solid $color-gray-50;
     margin: 0;
+
+    li {
+      border-left: 1px solid $color-gray-40;
+    }
   }
 
   li {
@@ -125,21 +129,25 @@
     .element-list-body {
       align-items: center;
       display: flex;
+      height: 30px;
       padding: $x-small $small;
       transition: none;
       width: 100%;
 
       svg {
-        fill: $color-gray-60;
+        fill: $color-gray-20;
         height: 13px;
+        flex-shrink: 0;
         margin-right: 8px;
         width: 13px;
       }
 
       .element-actions {
         align-items: center;
-        display: flex;
+        display: none;
         flex-shrink: 0;
+        justify-content: flex-end;
+        margin-left: auto;
         width: 55px;
 
         .block-element {
@@ -175,7 +183,7 @@
         &:hover {
 
           svg {
-            fill: $color-gray-20;
+            fill: $color-gray-60;
           }
 
         }
@@ -199,6 +207,11 @@
 
       }
 
+      input.element-name {
+        max-width: 130px;
+        width: 100%;
+      }
+
       span.element-name {
         min-width: 40px;
         min-height: 16px;
@@ -206,9 +219,11 @@
 
         color: $color-gray-20;
         font-size: $fs13;
+        max-width: 130px;
         overflow-x: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        width: 100%;
       }
 
       &.selected {
@@ -252,6 +267,10 @@
       &:hover {
         background-color: $color-primary;
 
+        svg {
+          fill: $color-gray-60;
+        }
+
         .element-icon,
         .element-actions {
 
@@ -259,6 +278,10 @@
             fill: $color-gray-60;
           }
 
+        }
+
+        .element-actions {
+          display: flex;
         }
 
         span {
