@@ -94,6 +94,7 @@
           on-mouse-down #(common/on-mouse-down % shape)
           on-context-menu #(common/on-context-menu % shape)
           shape (merge frame-default-props shape)
+          {:keys [x y width height]} shape
 
           childs (mapv #(get objects %) (:shapes shape))
 
@@ -106,6 +107,13 @@
            :on-context-menu on-context-menu
            :on-double-click on-double-click
            :on-mouse-down on-mouse-down}
+       [:& "text" {:x x
+                   :y (- y 10)
+                   :width width
+                   :height 20
+                   :className "workspace-frame-label"
+                   :onClick on-double-click} ; user may also select with single click in the label
+        (:name shape)]
        [:& frame-shape {:shape shape :childs childs}]])))
 
 (mf/defc frame-shape
