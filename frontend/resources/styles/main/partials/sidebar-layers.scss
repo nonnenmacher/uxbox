@@ -155,16 +155,15 @@
           margin-right: 0;
         }
 
-        .block-element {
+      }
 
-          svg {
-            fill: $color-gray-30;
-          }
+      .block-element {
+        svg {
+          fill: $color-gray-30;
         }
       }
 
       .element-icon {
-
         svg {
           fill: $color-gray-30;
         }
@@ -186,7 +185,6 @@
         }
 
         &:hover {
-
           svg {
             fill: $color-gray-60;
           }
@@ -196,9 +194,7 @@
       }
 
       &.group {
-
         &.open {
-
           .toggle-content {
             flex-shrink: 0;
 
@@ -232,19 +228,19 @@
       }
 
       &.selected {
-        
+
         .element-icon {
-          
+
           svg {
             fill: $color-primary;
           }
-          
+
         }
-        
+
         span {
           color: $color-primary;
         }
-        
+
         &:hover {
           background-color: $color-primary;
 
@@ -262,7 +258,6 @@
       }
 
       .selected {
-
         svg {
           fill: $color-gray-20;
         }

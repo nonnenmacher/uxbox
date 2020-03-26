@@ -255,15 +255,17 @@
               [:& layer-frame-item
                {:item item
                 :key (:id item)
+                :selected selected
                 :objects objects
                 :index index}]
               [:& layer-item
                {:item item
+                :selected selected
                 :index index
                 :key (:id item)}])))])]))
 
 (mf/defc layers-tree
-  {:wrap [mf/wrap-memo]}
+  {::mf/wrap [mf/wrap-memo]}
   [props]
   (let [selected (mf/deref refs/selected-shapes)
         data (mf/deref refs/workspace-data)
@@ -276,10 +278,12 @@
            [:& layer-frame-item
             {:item item
              :key (:id item)
+             :selected selected
              :objects objects
              :index index}]
            [:& layer-item
             {:item item
+             :selected selected
              :index index
              :key (:id item)}])))]))
 
@@ -296,8 +300,7 @@
     [:div#layers.tool-window
      [:div.tool-window-bar
       [:div.tool-window-icon i/layers]
-      ;[:span (t locale "workspace.sidebar.layers")]
-      [:span "Page 1"]
+      [:span (:name page)]
       #_[:div.tool-window-close {:on-click on-click} i/close]]
      [:div.tool-window-content
       [:& layers-tree]]]))
