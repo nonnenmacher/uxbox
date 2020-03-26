@@ -129,7 +129,7 @@
     .element-list-body {
       align-items: center;
       display: flex;
-      height: 30px;
+      height: 35px;
       padding: $x-small $small;
       transition: none;
       width: 100%;
@@ -229,6 +229,10 @@
 
       &.selected {
 
+        svg {
+          fill: $color-primary;
+        }
+
         .element-icon {
 
           svg {
@@ -259,7 +263,7 @@
 
       .selected {
         svg {
-          fill: $color-gray-20;
+          fill: red;
         }
 
       }
